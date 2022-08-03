@@ -1,0 +1,40 @@
+﻿@page
+@model RazorPageCrud.Pages.Catagories.EditModel
+@{
+}
+
+
+<form method="post">
+    <input hidden asp-for="Catagory.Id"/>
+    <div class="border p-3 mt-4">
+        <div class="row pb-2">
+            <h2 class="text-primary">Create Catagory</h2>
+            <hr />
+
+        </div>
+        <div asp-validation-summary="All"></div>
+        <div class="mb-3">
+            <label asp-for="Catagory.Name"></label>
+            <input asp-for="Catagory.Name"class="form-control"/>
+            <span asp-validation-for="Catagory.Name"class="text-bg-danger"></span>
+
+        </div>
+         <div class="mb-3">
+              <label asp-for="Catagory.DisplayOrder"></label>
+            <input asp-for="Catagory.DisplayOrder"class="form-control"/>
+            <span asp-validation-for="Catagory.DisplayOrder"class="text-bg-danger"></span>
+
+
+        </div>
+        <button type="submit" class="btn btn-primary" style="width:150px; "> Update</button>
+        <a asp-page="Index" class="btn btn-secondary" style="width:150px;">Back to List</a>
+
+    </div>
+
+</form>
+
+@section Scripts{
+    @{
+        <partial name="_ValidationScriptsPartial"/>
+    }
+}
